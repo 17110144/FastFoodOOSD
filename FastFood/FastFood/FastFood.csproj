@@ -1,0 +1,566 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{617242DA-EFF2-4785-AB08-48E5BC04BB7F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FastFood</RootNamespace>
+    <AssemblyName>FastFood</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\TK\KFC_FASTFOOD\bin\Debug\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>..\..\TK\KFC_FASTFOOD\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>..\..\TK\KFC_FASTFOOD\bin\Debug\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>..\..\TK\KFC_FASTFOOD\bin\Debug\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>..\..\TK\KFC_FASTFOOD\bin\Debug\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71">
+      <HintPath>..\..\TK\KFC_FASTFOOD\bin\Debug\FlashControlV71.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLayer\cls_Category.cs" />
+    <Compile Include="BusinessLayer\cls_Database.cs" />
+    <Compile Include="BusinessLayer\cls_Employess.cs" />
+    <Compile Include="BusinessLayer\cls_Order.cs" />
+    <Compile Include="BusinessLayer\cls_Product.cs" />
+    <Compile Include="BusinessLayer\cls_Report.cs" />
+    <Compile Include="BusinessLayer\cls_Salary.cs" />
+    <Compile Include="PresentationLayer\Forms\frm_About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Forms\frm_About.Designer.cs">
+      <DependentUpon>frm_About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Forms\frm_ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Forms\frm_ChangePassword.Designer.cs">
+      <DependentUpon>frm_ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Forms\frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Forms\frm_Login.Designer.cs">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Forms\frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Forms\frm_Main.Designer.cs">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Forms\frm_UserPermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Forms\frm_UserPermission.Designer.cs">
+      <DependentUpon>frm_UserPermission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_DepartmentManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_DepartmentManager.Designer.cs">
+      <DependentUpon>UC_DepartmentManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_DrinkManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_DrinkManager.Designer.cs">
+      <DependentUpon>UC_DrinkManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_FoodManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_FoodManager.Designer.cs">
+      <DependentUpon>UC_FoodManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_NCCManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_NCCManager.Designer.cs">
+      <DependentUpon>UC_NCCManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_OfficeManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_OfficeManager.Designer.cs">
+      <DependentUpon>UC_OfficeManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_PayrollManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_PayrollManager.Designer.cs">
+      <DependentUpon>UC_PayrollManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_PersonnelManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_PersonnelManager.Designer.cs">
+      <DependentUpon>UC_PersonnelManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_ProductType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_ProductType.Designer.cs">
+      <DependentUpon>UC_ProductType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_SalaryManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_SalaryManager.Designer.cs">
+      <DependentUpon>UC_SalaryManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_TimeSheetManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_TimeSheetManager.Designer.cs">
+      <DependentUpon>UC_TimeSheetManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_UserManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_UserManager.Designer.cs">
+      <DependentUpon>UC_UserManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Home.Designer.cs">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Noti.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Noti.Designer.cs">
+      <DependentUpon>UC_Noti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Order.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Order.Designer.cs">
+      <DependentUpon>UC_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Personnel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Personnel.Designer.cs">
+      <DependentUpon>UC_Personnel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Product.Designer.cs">
+      <DependentUpon>UC_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Salary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Salary.Designer.cs">
+      <DependentUpon>UC_Salary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_System.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_System.Designer.cs">
+      <DependentUpon>UC_System.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="PresentationLayer\Forms\frm_About.resx">
+      <DependentUpon>frm_About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Forms\frm_ChangePassword.resx">
+      <DependentUpon>frm_ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Forms\frm_Login.resx">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Forms\frm_Main.resx">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Forms\frm_UserPermission.resx">
+      <DependentUpon>frm_UserPermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_DepartmentManager.resx">
+      <DependentUpon>UC_DepartmentManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_DrinkManager.resx">
+      <DependentUpon>UC_DrinkManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_FoodManager.resx">
+      <DependentUpon>UC_FoodManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_NCCManager.resx">
+      <DependentUpon>UC_NCCManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_OfficeManager.resx">
+      <DependentUpon>UC_OfficeManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_PayrollManager.resx">
+      <DependentUpon>UC_PayrollManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_PersonnelManager.resx">
+      <DependentUpon>UC_PersonnelManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_ProductType.resx">
+      <DependentUpon>UC_ProductType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_SalaryManager.resx">
+      <DependentUpon>UC_SalaryManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_TimeSheetManager.resx">
+      <DependentUpon>UC_TimeSheetManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_UserManager.resx">
+      <DependentUpon>UC_UserManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Home.resx">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Noti.resx">
+      <DependentUpon>UC_Noti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Order.resx">
+      <DependentUpon>UC_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Personnel.resx">
+      <DependentUpon>UC_Personnel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Salary.resx">
+      <DependentUpon>UC_Salary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_System.resx">
+      <DependentUpon>UC_System.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\SVN-Segoe Print.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DBLayer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_shopping_cart_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin_settings_male_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administrative_tools_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_pointing_left_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\available_updates_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cafe_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\city_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Client_company.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\client_company_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conference_call_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contact_card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contact_card_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contract.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contract_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\couple_globe_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_configuration_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_file_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_file_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_property_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_user_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FastFood.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FastFood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fast-Food-Free-PNG-Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graduation_cap_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\groups_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hamburger_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kfc_chicken_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_round_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_round_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_with_yellow_tie_in_jacket_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\online_shop_sale_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order_delivered_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\planner_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\provider_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question_mark_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question_mark_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\receive_cash_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red_shopping_basket_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restart_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore_down_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resume_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resume_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shopping_cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping_cart_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sqlsever.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sqlsever2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statistics_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subtract_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subtract_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\synchronize_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system_task_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unchecked_checkbox_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unchecked_checkbox_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\worker_male_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\world_map_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\worldwide_location_120px.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
